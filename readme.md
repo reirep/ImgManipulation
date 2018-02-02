@@ -14,12 +14,56 @@ There is two ways of using this project: the cli and in interractive mode.
 
 ## Availables filters
 
+This is the list of all currently available filters and their organisation. More filters will be added in the future.
+
+- all
+    - blur
+        - box
+        - gaussianBig
+        - gaussianSmall
+    - colour
+        - filter
+            - grey
+            - greymean
+            - invert
+            - root
+            - sepia
+            - solarizehigh
+            - solarizelow
+            - square
+        - full
+            - red
+            - green
+            - blue
+        - no
+            - red
+            - green
+            - blue
+        - brightness
+        - contrast
+        - gamma
+    - edge
+        - basic1
+        - basic2
+        - basic3
+        - prewitt
+        - scharr
+        - sobal
+    - grain
+        - softmax
+    - mirror
+        - vertical
+        - horizontal
+    - nette
+        - sharpen
+    - zone
+        - first
 
 ## TODO
 - The TODO list
 - Jar
 - Better doc
-- The list of available filters and how they work
+- Add details on the list of filters
 - ...
  
 ## Dependencies
