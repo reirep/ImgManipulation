@@ -3,11 +3,6 @@ package imageManipulation.all.colour.full;
 import imageManipulation.Colors;
 import imageManipulation.Picture;
 import imageManipulation.Transform;
-import imageManipulation.transformOld;
-
-import javax.print.attribute.standard.RequestingUserName;
-import java.awt.*;
-import java.awt.image.BufferedImage;
 
 /**
  * Created by the awesome pierre on 6/01/18

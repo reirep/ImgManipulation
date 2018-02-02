@@ -36,7 +36,7 @@ import java.util.Scanner;
  *
  *  edge detection
  *
- *      canny edge detection
+ *      x_canny edge detection
  *
  *      https://en.wikipedia.org/wiki/Feature_extraction
  *      https://en.wikipedia.org/wiki/Digital_image_processing

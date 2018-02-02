@@ -25,10 +25,12 @@ public class sobel extends Transform {
             {1,0,-1}
     });
     private static final DoubleMatrix kernelY = new DoubleMatrix(new double[][]{
-            {1,  2, 1},
-            {0,  0, 0},
+            { 1, 2, 1},
+            { 0, 0, 0},
             {-1,-2,-1},
     });
+
+    DoubleMatrix magX, magY;
 
     @Override
     public Picture transform(Picture in) {
@@ -36,8 +38,8 @@ public class sobel extends Transform {
         grey g = new grey();
         Picture workingCopy = g.transform(in);
 
-        DoubleMatrix magX = convolution(workingCopy.r, kernelX, 1);
-        DoubleMatrix magY = convolution(workingCopy.r, kernelY, 1);
+        magX = convolution(workingCopy.r, kernelX, 1);
+        magY = convolution(workingCopy.r, kernelY, 1);
 
         for(int x = 0; x < workingCopy.getWidth(); x++){
             for(int y = 0; y < workingCopy.getHeight(); y++){
@@ -55,5 +57,13 @@ public class sobel extends Transform {
     @Override
     public String getName() {
         return NAME;
+    }
+
+    public DoubleMatrix getGX(){
+        return magX;
+    }
+
+    public DoubleMatrix getGY(){
+        return magY;
     }
 }
