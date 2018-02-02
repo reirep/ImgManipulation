@@ -10,6 +10,12 @@ There is two ways of using this project: the cli and in interractive mode.
 ### CLI
 
 ### Interractive mode
+
+## TODO
+- The TODO list
+- Jar
+- Better doc
+- ...
  
 ## Dependencies
 - [jblas](jblas.org)
