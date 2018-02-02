@@ -9,12 +9,17 @@ There is two ways of using this project: the cli and in interractive mode.
 
 ### CLI
 
+
 ### Interractive mode
+
+## Availables filters
+
 
 ## TODO
 - The TODO list
 - Jar
 - Better doc
+- The list of available filters and how they work
 - ...
  
 ## Dependencies
