@@ -16,8 +16,8 @@ java -jar lib.jar list
 java -jar lib.jar <path to picture> <formated filters list>
 ```
 
-- The `list` command list all filters availables. *Currently broken - wip*
-- The `help` command show a helper message.
+- The `list` command list all filters availables. 
+- The `help` command show a helper message. *Currently broken - wip*
 The `<path to picture>` must be a path (absolute or not) to a single picture (multiple is wip)
 The `formated filters list` must be the list of filter you want to apply and the picture, with, when needed, some arguments for the filter.
 The filter list must respect thoses rules:
@@ -38,6 +38,7 @@ All the filters don't require the same kind of arguments !
 
 ### Interractive mode
 
+WIP
 
 ## Availables filters
 
@@ -95,10 +96,13 @@ More filters will be added in the future.
 - The "interractive mode" part of the doc
 - Add details on the list of filters
 - add support for multiple pictures
+- The help message
+- The list command
 - ...
  
 ## Dependencies
 - [jblas](jblas.org)
+- [ast-classpath-scanner](https://github.com/lukehutch/fast-classpath-scanner)
  
 ## License
 This project is under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.

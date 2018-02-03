@@ -1,9 +1,12 @@
 package imageManipulation;
 
+import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
+import io.github.lukehutch.fastclasspathscanner.scanner.ScanResult;
 import org.jblas.DoubleMatrix;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 
 /**
  * Created by the awesome pierre on 6/01/18
@@ -13,6 +16,8 @@ public class Utils {
     static final String SEPARATEUR_FILTRES = ">";
     static final String SEPARATEUR_FILTRE_ARG = ":";
     public static final String SEPARATEUR_ARGS = ",";
+
+    public static final String FILTER_PACKAGE = "imageManipulation.all.";
 
     //CLI helpers
 
@@ -29,7 +34,17 @@ public class Utils {
      * Print a list of all the currely existing filters, broken for now.
      */
     public static void list(){
-        System.out.println("Option currently broken - WIP");
+        FastClasspathScanner scanner = new FastClasspathScanner(FILTER_PACKAGE.substring(0,FILTER_PACKAGE.length()-1));
+        ScanResult result = scanner.scan();
+
+        System.out.println("\t(Note: all the filter starting with \"x_\" are broken or under developpement.)");
+
+        for(String s : result.getNamesOfAllClasses()) {
+            if (s.contains(FILTER_PACKAGE) && !s.contains("$")) {
+                s = s.replace(FILTER_PACKAGE, "");
+                System.out.println(s);
+            }
+        }
     }
 
     //internal utils for the photo filters

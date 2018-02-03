@@ -1,6 +1,7 @@
 package imageManipulation;
 
 import javax.imageio.ImageIO;
+import javax.rmi.CORBA.Util;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -49,7 +50,6 @@ import java.util.Scanner;
  */
 
 public class main {
-    private static final String FILTER_FOLDER = "imageManipulation.all.";
 
     public static void main(String ... args){
         if(args.length == 0)
@@ -106,7 +106,7 @@ public class main {
         for(String filterRaw : filters){
             String filter = filterRaw.split(Utils.SEPARATEUR_FILTRE_ARG)[0];
             String argsFilter = filter.length() == filterRaw.length() ? "" : filterRaw.split(Utils.SEPARATEUR_FILTRE_ARG)[1];
-            Class cl = Class.forName(FILTER_FOLDER+filter);
+            Class cl = Class.forName(Utils.FILTER_PACKAGE+filter);
             Constructor co;
             Transform t;
             try {
@@ -124,7 +124,7 @@ public class main {
                 throw new RuntimeException("Malformed filter: "+e.getMessage());
             } catch(NoSuchMethodException | RuntimeException e){
                 try {
-                    Class cHelp = Class.forName(FILTER_FOLDER+filter);
+                    Class cHelp = Class.forName(Utils.FILTER_PACKAGE+filter);
                     Method mHelp = cHelp.getMethod("help");
                     String help = (String)mHelp.invoke(null);
                     throw new RuntimeException("Invalid use of arguments.\nThe filter "+filter+" must be used in the following way:\n"+help);
