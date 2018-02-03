@@ -30,12 +30,8 @@ import java.util.Scanner;
  *
  *  deflouter une photo : pixel auquel on va enlever les pixels les plus differents autour de lui (eventuellement avec la distance)
  *
- *  chercher les pixel les plus "grappés et les regrouper ensembles"
- *
  *  edge detection
- *
  *      x_canny edge detection
- *
  *      https://en.wikipedia.org/wiki/Feature_extraction
  *      https://en.wikipedia.org/wiki/Digital_image_processing
  *
@@ -48,6 +44,9 @@ import java.util.Scanner;
  *  https://dsp.stackexchange.com/questions/24436/looking-for-open-source-image-processing-library-that-is-equivalent-to-hips
  *  more inspiration
  *  http://www.imagemagick.org/script/index.php
+ *
+ *  rotate images
+ *  change resolution image
  */
 
 public class Filter {

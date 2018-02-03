@@ -113,6 +113,8 @@ More filters will be added in the future.
 - The help message
 - Remodel the java API
 - add a logger
+- update the filter list with the new ones
+- add multiple output formats
 - ...
  
 ## Dependencies
