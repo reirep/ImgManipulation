@@ -4,9 +4,8 @@ import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import io.github.lukehutch.fastclasspathscanner.scanner.ScanResult;
 import org.jblas.DoubleMatrix;
 
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
+import java.util.List;
+import java.util.LinkedList;
 
 /**
  * Created by the awesome pierre on 6/01/18
@@ -16,6 +15,8 @@ public class Utils {
     static final String SEPARATEUR_FILTRES = ">";
     static final String SEPARATEUR_FILTRE_ARG = ":";
     public static final String SEPARATEUR_ARGS = ",";
+
+    public static final String SEPARATEUR_NOM_FILTRES = "_";
 
     public static final String FILTER_PACKAGE = "imageManipulation.all.";
 
@@ -33,18 +34,18 @@ public class Utils {
     /**
      * Print a list of all the currely existing filters, broken for now.
      */
-    public static void list(){
+    public static List<String> list(){
         FastClasspathScanner scanner = new FastClasspathScanner(FILTER_PACKAGE.substring(0,FILTER_PACKAGE.length()-1));
         ScanResult result = scanner.scan();
-
-        System.out.println("\t(Note: all the filter starting with \"x_\" are broken or under developpement.)");
+        LinkedList<String> filters = new LinkedList<>();
 
         for(String s : result.getNamesOfAllClasses()) {
-            if (s.contains(FILTER_PACKAGE) && !s.contains("$")) {
+            if (s.contains(FILTER_PACKAGE) && !s.contains("$") && !s.contains("x_")) {
                 s = s.replace(FILTER_PACKAGE, "");
-                System.out.println(s);
+                filters.add(s);
             }
         }
+        return filters;
     }
 
     //internal utils for the photo filters

@@ -41,6 +41,17 @@ All the filters don't require the same kind of arguments !
 
 documentation WIP
 
+### Java api
+
+All the methods needed to use this lib are contained in the Filter class.
+Thoses methods can return a variety of exceptions don't hesitate to read the doc.
+
+- `public static List<String> list()`: return a list of all the available filters.
+- `public static Picture applyFilter(Picture p, String filterLine)`: apply the filter to the picture and append
+the name of the filter to the name of the picture.
+- `public static void applyFilters(String pathPicture, String [] filters)`: apply all the given filter
+to the given picture an return write the new picture to the disk.
+
 ## Availables filters
 
 This is the list of all currently available filters and their organisation. 
@@ -93,12 +104,13 @@ More filters will be added in the future.
 
 ## TODO
 - The TODO list
-- Jar
+- The generation of a jar
 - The "interractive mode" part of the doc
 - Add details on the list of filters
 - add support for multiple pictures
 - The help message
-- Add a java api
+- Remodel the java API
+- add a logger
 - ...
  
 ## Dependencies

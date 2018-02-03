@@ -10,14 +10,20 @@ import java.awt.image.BufferedImage;
  */
 public class Picture {
     public DoubleMatrix r, g, b;
+    private StringBuilder name;
 
-    public Picture(){}
+    public Picture(String name){
+        this.name = new StringBuilder(name);
+    }
 
-    public Picture(BufferedImage i){
+    public Picture(String name, BufferedImage i){
+        this.name = new StringBuilder(name);
         initFromBufferedImage(i);
     }
 
     public Picture(Picture p){
+        name = new StringBuilder(p.getName());
+
         r = new DoubleMatrix(p.r.getRows(), p.r.getColumns());
         r.copy(p.r);
 
@@ -28,7 +34,8 @@ public class Picture {
         b.copy(p.b);
     }
 
-    public Picture(int width, int length){
+    public Picture(String name, int width, int length){
+        this.name = new StringBuilder(name);
         r = new DoubleMatrix(width,length);
         g = new DoubleMatrix(width,length);
         b = new DoubleMatrix(width,length);
@@ -95,6 +102,14 @@ public class Picture {
             }
         }
         return bi;
+    }
+
+    public String getName(){
+        return name.toString();
+    }
+
+    public void appendToName(String value){
+        this.name.append(value);
     }
 
     private int getColorVal(double val){
