@@ -92,6 +92,7 @@ More filters will be added in the future.
         - prewitt
         - scharr
         - sobal
+        - x_canny
     - grain
         - softmax
     - mirror
@@ -99,6 +100,7 @@ More filters will be added in the future.
         - horizontal
     - nette
         - sharpen
+        - x_unsharp
     - zone
         - first
 

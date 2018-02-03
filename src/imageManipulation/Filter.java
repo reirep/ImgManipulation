@@ -50,6 +50,10 @@ import java.util.Scanner;
  *
  *  fourrier transformation
  *
+ *  if inspiration is needed
+ *  https://dsp.stackexchange.com/questions/24436/looking-for-open-source-image-processing-library-that-is-equivalent-to-hips
+ *  more inspiration
+ *  http://www.imagemagick.org/script/index.php
  */
 
 public class Filter {
