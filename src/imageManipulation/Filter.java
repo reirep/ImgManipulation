@@ -15,13 +15,9 @@ import java.util.Scanner;
  * Created by pierre on 6/01/18
  *
  * TODO:
- *  maybe add blends and two photos effect ?
- *  https://dunnbypaul.net/blends/
  *  cadres
  *  vignette effect
- *s
  * http://www.dfstudios.co.uk/articles/programming/image-programming-algorithms/
- *  color diminution (-> 8 bits)
  *  color correction
  *
  *  play with the hue,
