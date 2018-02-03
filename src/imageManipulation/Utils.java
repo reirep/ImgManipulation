@@ -32,7 +32,7 @@ public class Utils {
     }
 
     /**
-     * Print a list of all the currely existing filters, broken for now.
+     * Print a list of all the currely existing filters.
      */
     public static List<String> list(){
         FastClasspathScanner scanner = new FastClasspathScanner(FILTER_PACKAGE.substring(0,FILTER_PACKAGE.length()-1));

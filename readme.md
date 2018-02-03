@@ -25,7 +25,7 @@ The filter list must respect thoses rules:
     - All the filter must be names from the `imageManipulation.all` package (example: `blur.box` is a valid filter name).
     - When multiple filters are required, separate them with the '>' symbol (example: `blur.box>edge.sobel` is a valid chain of filters).
     - When a filter need one or more arguments, the filter and it's arguments must be separated by using the ':' symbol.
-    - When a filter multiple arguments, separate the arguments with the ',' symbol.
+    - When a filter has multiple arguments, separate the arguments with the ',' symbol.
     
 Example of correclty formated fitlers:
 
