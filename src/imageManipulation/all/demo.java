@@ -2,6 +2,7 @@ package imageManipulation.all;
 
 import imageManipulation.Picture;
 import imageManipulation.Transform;
+import imageManipulation.Utils;
 
 /**
  * Created by the awesome pierre on 6/01/18
@@ -18,7 +19,7 @@ public class demo extends Transform {
 
     //when the effect takes args, mus be in the format: transformation:arg-arg-arg
     public demo(String arg){
-        String args[] = arg.split("-");
+        String args[] = arg.split(Utils.SEPARATEUR_ARGS);
         for(String a : args)
             System.out.println(a);
     }
@@ -26,7 +27,7 @@ public class demo extends Transform {
     private static final String name = "demo";
     @Override
     public Picture transform(Picture in) {
-        return new Picture(in);
+        return in;
     }
 
     @Override

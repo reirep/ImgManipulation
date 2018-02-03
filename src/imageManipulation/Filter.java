@@ -1,15 +1,13 @@
 package imageManipulation;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import imageManipulation.Exceptions.BrokenFilterException;
-import imageManipulation.Exceptions.FilterNotFoundException;
+import imageManipulation.exceptions.BrokenFilterException;
+import imageManipulation.exceptions.FilterNotFoundException;
 
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Scanner;
 

@@ -13,9 +13,8 @@ public class blue extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture result = new Picture(in);
-        result = parseAndApplyRGB(result, blue::getColor);
-        return result;
+        in = parseAndApplyRGB(in, blue::getColor);
+        return in;
     }
 
     @Override

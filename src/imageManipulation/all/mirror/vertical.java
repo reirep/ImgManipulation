@@ -13,15 +13,14 @@ public class vertical extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
-        for(int x = 0; x < workingCopy.getWidth(); x++){
-            for(int y =0; y < workingCopy.getHeight(); y++){
-                workingCopy.set(x,y, Colors.RED, in.get(in.getWidth()-1-x, y,Colors.RED));
-                workingCopy.set(x,y, Colors.GREEN, in.get(in.getWidth()-1-x, y,Colors.GREEN));
-                workingCopy.set(x,y, Colors.BLUE, in.get(in.getWidth()-1-x, y,Colors.BLUE));
+        for(int x = 0; x < in.getWidth(); x++){
+            for(int y =0; y < in.getHeight(); y++){
+                in.set(x,y, Colors.RED, in.get(in.getWidth()-1-x, y,Colors.RED));
+                in.set(x,y, Colors.GREEN, in.get(in.getWidth()-1-x, y,Colors.GREEN));
+                in.set(x,y, Colors.BLUE, in.get(in.getWidth()-1-x, y,Colors.BLUE));
             }
         }
-        return workingCopy;
+        return in;
     }
 
     @Override

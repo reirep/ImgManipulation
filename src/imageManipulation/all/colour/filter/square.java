@@ -14,9 +14,8 @@ public class square extends Transform {
     private static final String name = "square";
     @Override
     public Picture transform(Picture in) {
-        Picture result = new Picture(in);
-        result = parseAndApplyRGB(result, square::getCarre);
-        return result;
+        in = parseAndApplyRGB(in, square::getCarre);
+        return in;
     }
 
     @Override

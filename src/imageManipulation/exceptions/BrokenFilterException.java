@@ -1,4 +1,4 @@
-package imageManipulation.Exceptions;
+package imageManipulation.exceptions;
 
 /**
  * Created by the awesome pierre on 3/02/18

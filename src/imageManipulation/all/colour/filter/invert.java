@@ -13,9 +13,8 @@ public class invert extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
-        workingCopy = parseAndApplyRGB(workingCopy, invert::invert);
-        return workingCopy;
+        in = parseAndApplyRGB(in, invert::invert);
+        return in;
     }
 
     @Override

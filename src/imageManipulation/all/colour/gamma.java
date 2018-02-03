@@ -25,9 +25,8 @@ public class gamma extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
-        workingCopy = parseAndApplyRGB(workingCopy, this::changeContrast);
-        return workingCopy;
+        in = parseAndApplyRGB(in, this::changeContrast);
+        return in;
     }
 
     @Override

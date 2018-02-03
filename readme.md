@@ -1,5 +1,7 @@
 # Image manipulation library
 (I'm still working on the name)
+
+A small lib writen in java (1.8) to manipulate images.
  
 ## Installation
 Currently, there is no way to build a jar with one command. It's on the TODO list... I will (maybe) do it in some distant future.

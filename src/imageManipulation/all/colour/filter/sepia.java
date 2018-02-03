@@ -13,9 +13,8 @@ public class sepia extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
-        workingCopy = parseAndApplyRGB(workingCopy,sepia::applySepia);
-        return workingCopy;
+        in = parseAndApplyRGB(in,sepia::applySepia);
+        return in;
     }
 
     //thanks to https://stackoverflow.com/questions/1061093/how-is-a-sepia-tone-created

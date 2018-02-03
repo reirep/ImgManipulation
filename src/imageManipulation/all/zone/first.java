@@ -45,13 +45,12 @@ public class first extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
         clustered = new boolean[in.getWidth()][in.getHeight()];
         LinkedList<Point> q;
         Set<Point> s;
 
-        for(int x = 0; x < workingCopy.getWidth(); x++){
-            for(int y =0; y < workingCopy.getHeight(); y++){
+        for(int x = 0; x < in.getWidth(); x++){
+            for(int y =0; y < in.getHeight(); y++){
                 if(clustered[x][y])//on skippe le pixel si il a déjà été clusteré
                     continue;
 
@@ -59,20 +58,20 @@ public class first extends Transform {
                 s  = new HashSet<>();
 
                 q.add(new Point(x,y,
-                        workingCopy.get(x,y, Colors.RED),
-                        workingCopy.get(x,y,Colors.GREEN),
-                        workingCopy.get(x,y,Colors.BLUE)));
+                        in.get(x,y, Colors.RED),
+                        in.get(x,y,Colors.GREEN),
+                        in.get(x,y,Colors.BLUE)));
 
                 while(!q.isEmpty()){
                     Point current = q.pop();
                     s.add(current);
                     getEligibleNeibourns(
-                            workingCopy.get(x,y,Colors.RED),
-                            workingCopy.get(x,y,Colors.GREEN),
-                            workingCopy.get(x,y,Colors.BLUE),
+                            in.get(x,y,Colors.RED),
+                            in.get(x,y,Colors.GREEN),
+                            in.get(x,y,Colors.BLUE),
                             current.x,
                             current.y,
-                            workingCopy,
+                            in,
                             q
                     );
                 }
@@ -86,13 +85,13 @@ public class first extends Transform {
                 }
 
                 for(Point p : s) {
-                    workingCopy.set(p.x, p.y,Colors.RED, r);
-                    workingCopy.set(p.x, p.y,Colors.GREEN, g);
-                    workingCopy.set(p.x, p.y,Colors.BLUE, b);
+                    in.set(p.x, p.y,Colors.RED, r);
+                    in.set(p.x, p.y,Colors.GREEN, g);
+                    in.set(p.x, p.y,Colors.BLUE, b);
                 }
             }
         }
-        return workingCopy;
+        return in;
     }
 
     private static class Point{

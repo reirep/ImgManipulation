@@ -143,6 +143,14 @@ public class Utils {
         return p;
     }
 
+    //exctly like the method above but won't recompute the value for ech layer
+    public static Picture convolutionMono(Picture p, DoubleMatrix kernel, double coef) {
+        p.r = convolution(p.r, kernel, coef);
+        p.g.copy(p.r);
+        p.b.copy(p.r);
+        return p;
+    }
+
 
     //TODO mirrorer les pixel hors images par les pixels en image au lieu de les ignorer
     //https://en.wikipedia.org/wiki/Kernel_(image_processing)#Convolution

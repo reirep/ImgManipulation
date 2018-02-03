@@ -14,9 +14,8 @@ public class grey extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture result = new Picture(in);
-        result = parseAndApplyRGB(result, grey::getGrey);
-        return result;
+        in = parseAndApplyRGB(in, grey::getGrey);
+        return in;
     }
 
     @Override

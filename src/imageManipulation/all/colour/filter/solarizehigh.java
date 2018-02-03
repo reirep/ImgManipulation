@@ -28,9 +28,8 @@ public class solarizehigh extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture workingCopy = new Picture(in);
-        workingCopy = parseAndApplyRGB(workingCopy, solarizehigh::invert);
-        return workingCopy;
+        in = parseAndApplyRGB(in, solarizehigh::invert);
+        return in;
     }
 
     @Override

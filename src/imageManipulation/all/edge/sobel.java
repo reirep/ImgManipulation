@@ -36,22 +36,22 @@ public class sobel extends Transform {
     public Picture transform(Picture in) {
 
         grey g = new grey();
-        Picture workingCopy = g.transform(in);
+        in = g.transform(in);
 
-        magX = convolution(workingCopy.r, kernelX, 1);
-        magY = convolution(workingCopy.r, kernelY, 1);
+        magX = convolution(in.r, kernelX, 1);
+        magY = convolution(in.r, kernelY, 1);
 
-        for(int x = 0; x < workingCopy.getWidth(); x++){
-            for(int y = 0; y < workingCopy.getHeight(); y++){
+        for(int x = 0; x < in.getWidth(); x++){
+            for(int y = 0; y < in.getHeight(); y++){
                 int c = (int)Math.sqrt(Math.pow(magX.get(x,y),2) + Math.pow(magY.get(x,y), 2) );
-                workingCopy.set(x,y, Colors.RED, c);
-                workingCopy.set(x,y, Colors.GREEN, c);
-                workingCopy.set(x,y, Colors.BLUE, c);
+                in.set(x,y, Colors.RED, c);
+                in.set(x,y, Colors.GREEN, c);
+                in.set(x,y, Colors.BLUE, c);
 
             }
         }
 
-        return workingCopy;
+        return in;
     }
 
     @Override

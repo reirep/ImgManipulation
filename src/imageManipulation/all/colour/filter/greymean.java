@@ -14,9 +14,8 @@ public class greymean extends Transform {
 
     @Override
     public Picture transform(Picture in) {
-        Picture result = new Picture(in);
-        result = parseAndApplyRGB(result, greymean::getGrey);
-        return result;
+        in = parseAndApplyRGB(in, greymean::getGrey);
+        return in;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package imageManipulation.Exceptions;
+package imageManipulation.exceptions;
 
 import java.io.FileNotFoundException;
 

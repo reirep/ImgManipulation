@@ -14,9 +14,8 @@ public class root extends Transform {
     private static final String name = "root";
     @Override
     public Picture transform(Picture in) {
-        Picture result = new Picture(in);
-        result = parseAndApplyRGB(result, root::getRacine);
-        return result;
+        in = parseAndApplyRGB(in, root::getRacine);
+        return in;
     }
 
     @Override

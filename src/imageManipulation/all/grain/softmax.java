@@ -42,18 +42,17 @@ public class softmax extends Transform {
     private static final String name = "grain softmax";
     @Override
     public Picture transform(Picture in) {
-        Picture dest = new Picture(in);
         for(int $ = 0; $ < n; $++) {
-            original = new Picture(dest);
+            original = new Picture(in);
             //TODO: peut etre faire couleur par couleur pour mieux utiliser les caches ? A creuser.
-            for (int x = 0; x < dest.getWidth(); x++)
-                for (int y = 0; y < dest.getHeight(); y++){
-                    dest.set(x,y,Colors.RED, getColor(x,y,Colors.RED));
-                    dest.set(x,y,Colors.GREEN, getColor(x,y,Colors.GREEN));
-                    dest.set(x,y,Colors.BLUE, getColor(x,y,Colors.BLUE));
+            for (int x = 0; x < in.getWidth(); x++)
+                for (int y = 0; y < in.getHeight(); y++){
+                    in.set(x,y,Colors.RED, getColor(x,y,Colors.RED));
+                    in.set(x,y,Colors.GREEN, getColor(x,y,Colors.GREEN));
+                    in.set(x,y,Colors.BLUE, getColor(x,y,Colors.BLUE));
                 }
         }
-        return dest;
+        return in;
     }
 
     public static String help(){
