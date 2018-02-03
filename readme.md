@@ -6,6 +6,7 @@ Currently, there is no way to build a jar with one command. It's on the TODO lis
  
 ## Usage
 There is two ways of using this project: the cli and in interractive mode.
+It's planned to add a java api... on the TODO list :)
 
 ### CLI
 
@@ -97,7 +98,7 @@ More filters will be added in the future.
 - Add details on the list of filters
 - add support for multiple pictures
 - The help message
-- The list command
+- Add a java api
 - ...
  
 ## Dependencies
