@@ -39,7 +39,7 @@ All the filters don't require the same kind of arguments !
 
 ### Interractive mode
 
-WIP
+documentation WIP
 
 ## Availables filters
 
