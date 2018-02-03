@@ -189,4 +189,66 @@ public class Utils {
         return x >= 0 && y >= 0 && x < p.getRows() && y < p.getColumns();
     }
 
+    public static class Geometry {
+
+        //TODO test this function
+        /**
+         * Draw a circle in the area defined by the rectangle (x0,y0) (x0,y1) (x1,y0) (x1,y1). The background is withe.
+         * The circle will be of coolour (r,g,b)
+         * @param p the picture to draw the circle in
+         * @param r the red channel of the circle
+         * @param g the green chennel of the circle
+         * @param b the blue channle of the circle
+         * @param x0 the x bottom left coordinate of the rectangle
+         * @param y0 the y bottom left coordinate of the rectangle
+         * @param x1 the x upper right coordinate of the rectangle
+         * @param y1 the y upper right coordinate of the rectangle
+         * @return the image with the circle draw in it
+         */
+        public static Picture drawCircle(Picture p, double r, double g, double b, int x0, int y0, int x1, int y1){
+            int xBase = Math.min(x0,x1);
+            int yBase = Math.min(y0,y1);
+
+            double radius = Math.abs(x1-x0)/2;
+            double centerX = xBase+Math.abs(x1-x0)/2;
+            double centerY = yBase+Math.abs(y1-y0)/2;
+
+            for(int x = 0;  x < Math.abs(x1-x0); x++){
+                for(int y = 0; y < Math.abs(y1-y0); y++){
+                    if(isInsideTheCircle(centerX, centerY, radius, x, y)){
+                        p.set(x,y,Colors.RED, r);
+                        p.set(x,y,Colors.GREEN, g);
+                        p.set(x,y,Colors.BLUE, b);
+                    }
+                    else{
+                        p.set(x,y,Colors.RED, 0);
+                        p.set(x,y,Colors.GREEN, 0);
+                        p.set(x,y,Colors.BLUE, 0);
+                    }
+                }
+            }
+            return p;
+        }
+
+        private static boolean isInsideTheCircle(double xCenter, double yCenter, double radius, int x, int y){
+            return Math.pow(x+xCenter,2)+Math.pow(y+yCenter,2) <= Math.pow(radius,2);
+        }
+
+        public static Picture drawRectangle(Picture p, double r, double g, double b){
+            //TODO
+            return null;
+        }
+
+        public static Picture drawLosange(Picture p, double r, double g, double b){
+            //TODO
+            return null;
+        }
+
+        //TODO add more forms :)
+    }
+
+    public static boolean equals(double d1, double d2, double delta){
+        return Math.abs(d1-d2) < delta;
+    }
+
 }

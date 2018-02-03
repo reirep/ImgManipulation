@@ -48,6 +48,8 @@ import java.util.Scanner;
  *
  *  rotate images
  *  change resolution image
+ *
+ *  all the geometry filters
  */
 
 public class Filter {
