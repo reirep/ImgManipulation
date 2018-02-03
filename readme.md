@@ -18,8 +18,8 @@ java -jar lib.jar <path to picture> <formated filters list>
 
 - The `list` command list all filters availables. 
 - The `help` command show a helper message. *Currently broken - wip*
-The `<path to picture>` must be a path (absolute or not) to a single picture (multiple is wip)
-The `formated filters list` must be the list of filter you want to apply and the picture, with, when needed, some arguments for the filter.
+- The `<path to picture>` must be a path (absolute or not) to a single picture (multiple is wip)
+- The `formated filters list` must be the list of filter you want to apply and the picture, with, when needed, some arguments for the filter.
 The filter list must respect thoses rules:
     - All the filter must be names from the `imageManipulation.all` package (example: `blur.box` is a valid filter name).
     - When multiple filters are required, separate them with the '>' symbol (example: `blur.box>edge.sobel` is a valid chain of filters).
@@ -104,11 +104,10 @@ More filters will be added in the future.
         - first
 
 ## TODO
-- The TODO list
 - The generation of a jar
 - The "interractive mode" part of the doc
 - Add details on the list of filters
-- add support for multiple pictures
+- Add support for multiple pictures at the same time
 - The help message
 - Remodel the java API
 - add a logger
