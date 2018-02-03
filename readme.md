@@ -5,8 +5,7 @@
 Currently, there is no way to build a jar with one command. It's on the TODO list... I will (maybe) do it in some distant future.
  
 ## Usage
-There is two ways of using this project: the cli and in interractive mode.
-It's planned to add a java api... on the TODO list :)
+There is multiple way of using this lib. They are all listed here.
 
 ### CLI
 
