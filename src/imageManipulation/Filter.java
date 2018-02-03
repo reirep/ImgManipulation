@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 import java.util.Scanner;
 
@@ -146,7 +147,9 @@ public class Filter {
             throw new FilterNotFoundException("The filter requested is nowhere to be found.");
         } catch (NoSuchMethodException e) {
             //TODO: instanciate a static version of the filter here to retrive the help message and happend it to this message.
-            throw new IllegalArgumentException("The arguments are not the required ones !");
+            //utilise getHelpMessage pour ca mais la on ne sais pas parce que on ne sais pas c'est quel filtre qui nécéssite cela
+            //print all help messages ?
+            throw new IllegalArgumentException("The arguments are not the required ones !\n");
         } catch (InvocationTargetException e) {
             throw new BrokenFilterException(e.getCause().getMessage());
         } catch (InstantiationException | IllegalAccessException e) {
@@ -162,7 +165,7 @@ public class Filter {
      * @param filterArgs the arguments needed for the filter
      * @return the picture modified with the filter
      * @throws ClassNotFoundException the filter doesn't exist
-     * @throws NoSuchMethodException the required contrsutor doesn't exist. Probably mean that the filter doesn't require agument if some where given and the opposite.
+     * @throws NoSuchMethodException the required construtor doesn't exist. Probably mean that the filter doesn't require agument if some where given and the opposite.
      * @throws IllegalAccessException the filter is broken (problems of access).
      * @throws InvocationTargetException the filter is broken (needed to unwrap thet cause that created this exception).
      * @throws InstantiationException the given filter is abstract, an interface or hasn't the correct contructor.
@@ -185,5 +188,15 @@ public class Filter {
 
     public static List<String> list(){
         return Utils.list();
+    }
+
+    private static String getHelpMessage(String filterName){
+        String s = "";
+        try {
+            Class<Transform> c = (Class<Transform>) Class.forName(Utils.FILTER_PACKAGE+filterName);
+            Method m = c.getMethod("help");
+            s = (String)m.invoke(null);
+        } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException | IllegalAccessException ignore) {}
+        return s;
     }
 }
