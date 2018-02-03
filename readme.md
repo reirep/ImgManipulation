@@ -117,7 +117,7 @@ More filters will be added in the future.
  
 ## Dependencies
 - [jblas](jblas.org)
-- [ast-classpath-scanner](https://github.com/lukehutch/fast-classpath-scanner)
+- [fast-classpath-scanner](https://github.com/lukehutch/fast-classpath-scanner)
  
 ## License
 This project is under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
