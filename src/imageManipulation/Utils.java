@@ -234,9 +234,33 @@ public class Utils {
             return Math.pow(x+xCenter,2)+Math.pow(y+yCenter,2) <= Math.pow(radius,2);
         }
 
-        public static Picture drawRectangle(Picture p, double r, double g, double b){
-            //TODO
-            return null;
+        /**
+         * Draw a uniorm rectangle inside the given coordinates
+         * @param p the picture to draw the rectangle into
+         * @param r the red part of the color of the rectangle
+         * @param g the green part of the color of ht rectangle
+         * @param b the blue part of the color of the rectangle
+         * @param x0 the bottom left x coordiante
+         * @param y0 the bottom left y coordinate
+         * @param x1 the top right x coordinate
+         * @param y1 the top right y coordinate
+         * @return the picture with the rectangle draw into it
+         */
+        public static Picture drawRectangle(Picture p, double r, double g, double b, int x0, int y0, int x1, int y1){
+            int xBase = Math.min(x0,x1);
+            int yBase = Math.min(y0,y1);
+
+            int xSize = Math.abs(x0-x1);
+            int ySize = Math.abs(y0-y1);
+
+            for(int x = xBase; x < xBase+xSize; x++){
+                for(int y = yBase; y < yBase+ySize; y++){
+                    p.set(x,y,Colors.RED, r);
+                    p.set(x,y,Colors.GREEN, g);
+                    p.set(x,y,Colors.BLUE, b);
+                }
+            }
+            return p;
         }
 
         public static Picture drawLosange(Picture p, double r, double g, double b){
