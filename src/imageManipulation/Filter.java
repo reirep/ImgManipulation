@@ -50,6 +50,8 @@ import java.util.Scanner;
  *  change resolution image
  *
  *  all the geometry filters
+ *
+ *  the fisheye effect
  */
 
 public class Filter {
